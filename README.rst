@@ -3,10 +3,10 @@
 .. image:: https://img.shields.io/pypi/pyversions/sc-python-templates
     :alt: PyPI - Python Version
 
-A simple utilities for generating hash values from files
-========================================================
+A simple Python project sample structure
+========================================
 
-This project provides a simple utilities for generating hash values from files.
+This project provides a sample structure for creating python project.
 
 
 Installation

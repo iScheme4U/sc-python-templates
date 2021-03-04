@@ -31,13 +31,6 @@ The default configuration file looks like this::
       # whether this program is running is development mode
       dev_mode: False
 
-
-Dependencies
-------------
-
-* `sc-utilities <https://github.com/Scott-Lau/sc-utilities>`_ >= 0.0.2
-* `sc-config <https://github.com/Scott-Lau/sc-config>`_ >= 0.0.4
-
 License
 -------
 

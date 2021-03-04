@@ -36,7 +36,7 @@ Dependencies
 ------------
 
 * `sc-utilities <https://github.com/Scott-Lau/sc-utilities>`_ >= 0.0.2
-* `sc-config <https://github.com/Scott-Lau/sc-config>`_ >= 0.0.3
+* `sc-config <https://github.com/Scott-Lau/sc-config>`_ >= 0.0.4
 
 License
 -------

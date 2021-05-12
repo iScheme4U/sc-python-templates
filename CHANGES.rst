@@ -5,6 +5,7 @@ v0.0.4 (20210512)
 -----------------
 
     - Initialize logging before main function
+    - Update readme
 
 v0.0.3 (20210304)
 -----------------

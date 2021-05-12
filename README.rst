@@ -19,11 +19,11 @@ It is possible to install the tool with `pip`::
 Configuration
 -------------
 
-First, make sure /var/opt/sc directory exists, if not create this directory and make sure current user has the right
-to create files in this directory.
-
-You can copy `default.yml <https://github.com/Scott-Lau/sc-python-templates/blob/master/sc_templates/tests/sample_config/default.yml>`_
-to /var/opt/sc/.sc-python-templates/production.yml to initialize the production configuration.
+Configuration files reading in this order, the first is the top most priority:
+1. production.xml in current directory,
+2. production.xml in <project_name> directory under User directory,
+3. production.xml in <project_name> directory under /var/opt/sc/ directory,
+4. default.xml in <project_name> directory under /var/opt/sc/ directory.
 
 The default configuration file looks like this::
 

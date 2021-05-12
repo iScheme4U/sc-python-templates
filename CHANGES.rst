@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.0.4 (20210512)
+-----------------
+
+    - Initialize logging before main function
+
 v0.0.3 (20210304)
 -----------------
 

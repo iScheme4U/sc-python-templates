@@ -7,6 +7,7 @@ v0.0.4 (20210512)
     - Initialize logging before main function
     - Update readme
     - Fix setup readme encoding error
+    - Update dependency version
 
 v0.0.3 (20210304)
 -----------------

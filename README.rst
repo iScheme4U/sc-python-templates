@@ -20,10 +20,11 @@ Configuration
 -------------
 
 Configuration files reading in this order, the first is the top most priority:
-1. production.xml in current directory,
-2. production.xml in <project_name> directory under User directory,
-3. production.xml in <project_name> directory under /var/opt/sc/ directory,
-4. default.xml in <project_name> directory under /var/opt/sc/ directory.
+
+#. production.xml in current directory,
+#. production.xml in <project_name> directory under User directory,
+#. production.xml in <project_name> directory under /var/opt/sc/ directory,
+#. default.xml in <project_name> directory under /var/opt/sc/ directory.
 
 The default configuration file looks like this::
 

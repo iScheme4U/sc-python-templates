@@ -27,10 +27,6 @@
 
 from sys import exit
 
-from scutils import log_init
-
-log_init()
-
 from sc_templates.main import main
 
 exit(main())

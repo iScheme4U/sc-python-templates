@@ -27,7 +27,7 @@ from scutils import log_init
 
 log_init()
 
-from sc_templates.utils import config
+from .utils import config
 
 
 class Runner(metaclass=Singleton):

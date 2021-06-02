@@ -23,7 +23,7 @@ import logging
 
 from scconfig.config import Config
 
-from sc_templates.configs.default import DEFAULT_CONFIG
+from .configs.default import DEFAULT_CONFIG
 
 # =========================================
 #       INSTANCES

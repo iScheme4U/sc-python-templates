@@ -34,6 +34,9 @@ class ConfigUtils(metaclass=Singleton):
 
     _config = None
 
+    def __init__(self):
+        pass
+
     @classmethod
     def load_configurations(cls):
         """

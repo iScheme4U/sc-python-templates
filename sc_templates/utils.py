@@ -22,19 +22,42 @@
 import logging
 
 from scconfig.config import Config
+from scutils import Singleton
 
 from .configs.default import DEFAULT_CONFIG
 
-# =========================================
-#       INSTANCES
-# --------------------------------------
-try:
-    # load configurations
-    config = Config.create(project_name="sc-python-templates", defaults=DEFAULT_CONFIG)
-except Exception as error:
-    config = {}
-    logging.getLogger(__name__).exception("failed to read configuration", exc_info=error)
+
+class ConfigUtils(metaclass=Singleton):
+    """
+    配置文件相关工具类
+    """
+
+    _config = None
+
+    @classmethod
+    def load_configurations(cls):
+        """
+        加载配置文件
+        :return:
+        """
+        try:
+            # load configurations
+            cls._config = Config.create(project_name="sc-python-templates", defaults=DEFAULT_CONFIG)
+        except Exception as error:
+            cls._config = {}
+            logging.getLogger(__name__).exception("failed to read configuration", exc_info=error)
+
+    @classmethod
+    def get_config(cls):
+        """
+        获取配置信息
+        :return: 配置信息字典
+        """
+        if cls._config is None:
+            cls.load_configurations()
+        return cls._config
+
 
 __all__ = {
-    "config",
+    "ConfigUtils",
 }

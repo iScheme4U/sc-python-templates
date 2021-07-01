@@ -1,6 +1,12 @@
 Changelog
 =========
 
+20210701
+-----------------
+
+    - Update dependency
+    - Add ConfigUtils class
+
 20210512
 -----------------
 

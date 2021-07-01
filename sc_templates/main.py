@@ -27,7 +27,7 @@ from scutils import log_init
 
 log_init()
 
-from .utils import config
+from .utils import ConfigUtils
 
 
 class Runner(metaclass=Singleton):
@@ -36,6 +36,7 @@ class Runner(metaclass=Singleton):
         pass
 
     def run(self):
+        config = ConfigUtils.get_config()
         dev_mode = False
         try:
             dev_mode = config.get("dev.dev_mode")

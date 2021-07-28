@@ -77,7 +77,7 @@ setup(
     python_requires='>=3.6',
     install_requires=[
         'sc-utilities>=0.0.5',
-        'sc-config>=0.0.6',
+        'sc-config>=0.0.7',
     ],
     package_data={
         'sc_templates': ['tests/sample_config/*.yml'],

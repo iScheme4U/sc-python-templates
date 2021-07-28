@@ -5,6 +5,7 @@ Changelog
 -----------------
 
     - Add clear method
+    - Update dependency
 
 20210701
 -----------------

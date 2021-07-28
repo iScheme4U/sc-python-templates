@@ -21,6 +21,7 @@
 #  SOFTWARE.
 import logging
 
+import config42
 from scconfig.config import Config
 from scutils import Singleton
 
@@ -38,7 +39,15 @@ class ConfigUtils(metaclass=Singleton):
         pass
 
     @classmethod
-    def load_configurations(cls):
+    def clear(cls) -> None:
+        """
+        清除配置信息
+        :return:
+        """
+        cls._config = None
+
+    @classmethod
+    def load_configurations(cls) -> None:
         """
         加载配置文件
         :return:
@@ -51,7 +60,7 @@ class ConfigUtils(metaclass=Singleton):
             logging.getLogger(__name__).exception("failed to read configuration", exc_info=error)
 
     @classmethod
-    def get_config(cls):
+    def get_config(cls) -> config42.ConfigManager:
         """
         获取配置信息
         :return: 配置信息字典

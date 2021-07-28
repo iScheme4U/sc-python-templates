@@ -5,6 +5,7 @@ Changelog
 -----------------
 
     - Add clear method
+    - rename default configuration file
     - Update dependency
 
 20210701

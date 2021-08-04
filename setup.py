@@ -80,7 +80,7 @@ setup(
         'sc-config>=0.0.7',
     ],
     package_data={
-        'sc_templates': ['tests/sample_config/*.yml'],
+        'sc_templates': ['tests/sample_config/*'],
     },
     include_package_data=True,
 )

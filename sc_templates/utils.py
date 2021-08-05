@@ -19,6 +19,12 @@
 #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE.
+
+
+__all__ = {
+    "ConfigUtils",
+}
+
 import logging
 
 import config42
@@ -68,8 +74,3 @@ class ConfigUtils(metaclass=Singleton):
         if cls._config is None:
             cls.load_configurations()
         return cls._config
-
-
-__all__ = {
-    "ConfigUtils",
-}

@@ -33,7 +33,8 @@ from .utils import ConfigUtils
 class Runner(metaclass=Singleton):
 
     def __init__(self):
-        pass
+        ConfigUtils.clear()
+        ConfigUtils.load_configurations()
 
     def run(self):
         config = ConfigUtils.get_config()

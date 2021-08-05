@@ -55,7 +55,3 @@ def main():
         return 1
     else:
         return state
-
-
-if __name__ == '__main__':
-    main()

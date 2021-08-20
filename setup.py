@@ -76,7 +76,7 @@ setup(
     ],
     python_requires='>=3.6',
     install_requires=[
-        'sc-utilities>=0.0.y',
+        'sc-utilities>=0.0.7',
         'sc-config>=0.0.8',
     ],
     package_data={

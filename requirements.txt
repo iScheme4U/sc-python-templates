@@ -1,2 +1,2 @@
-sc-utilities>=0.0.6
+sc-utilities>=0.0.7
 sc-config>=0.0.8

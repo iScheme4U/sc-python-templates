@@ -31,8 +31,6 @@ import config42
 from sc_config.config import Config
 from sc_utilities import Singleton
 
-from .configs.default import DEFAULT_CONFIG
-
 
 class ConfigUtils(metaclass=Singleton):
     """
@@ -60,7 +58,7 @@ class ConfigUtils(metaclass=Singleton):
         """
         try:
             # load configurations
-            cls._config = Config.create(project_name="sc-python-templates", defaults=DEFAULT_CONFIG)
+            cls._config = Config.create(project_name="sc-python-templates")
         except Exception as error:
             cls._config = {}
             logging.getLogger(__name__).exception("failed to read configuration", exc_info=error)

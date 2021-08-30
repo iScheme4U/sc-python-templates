@@ -37,13 +37,6 @@ class Runner(metaclass=Singleton):
         ConfigUtils.load_configurations()
 
     def run(self):
-        config = ConfigUtils.get_config()
-        dev_mode = False
-        try:
-            dev_mode = config.get("dev.dev_mode")
-        except AttributeError:
-            pass
-        logging.getLogger(__name__).info('program is running in development mode: {}'.format(dev_mode))
         return 0
 
 

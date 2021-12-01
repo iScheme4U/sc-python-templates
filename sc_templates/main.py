@@ -27,16 +27,19 @@ from sc_utilities import log_init
 
 log_init()
 
-from .utils import ConfigUtils
+from sc_config import ConfigUtils
+from sc_templates import PROJECT_NAME
 
 
 class Runner(metaclass=Singleton):
 
     def __init__(self):
-        ConfigUtils.clear()
-        ConfigUtils.load_configurations()
+        project_name = PROJECT_NAME
+        ConfigUtils.clear(project_name)
+        self._config = ConfigUtils.get_config(project_name)
 
     def run(self):
+        logging.getLogger(__name__).info("config {}".format(self._config.as_dict()))
         return 0
 
 

@@ -39,7 +39,7 @@ class Runner(metaclass=Singleton):
         self._config = ConfigUtils.get_config(project_name)
 
     def run(self):
-        logging.getLogger(__name__).info("config {}".format(self._config.as_dict()))
+        logging.getLogger(__name__).debug("configurations {}".format(self._config.as_dict()))
         return 0
 
 

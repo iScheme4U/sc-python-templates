@@ -28,7 +28,7 @@ from sc_utilities import log_init
 log_init()
 
 from sc_config import ConfigUtils
-from sc_templates import PROJECT_NAME
+from sc_templates import PROJECT_NAME, __version__
 
 
 class Runner(metaclass=Singleton):
@@ -39,6 +39,7 @@ class Runner(metaclass=Singleton):
         self._config = ConfigUtils.get_config(project_name)
 
     def run(self):
+        logging.getLogger(__name__).info("program version {}".format(__version__))
         logging.getLogger(__name__).debug("configurations {}".format(self._config.as_dict()))
         return 0
 

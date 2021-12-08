@@ -29,6 +29,7 @@ log_init()
 
 from sc_config import ConfigUtils
 from sc_templates import PROJECT_NAME, __version__
+import argparse
 
 
 class Runner(metaclass=Singleton):
@@ -38,7 +39,8 @@ class Runner(metaclass=Singleton):
         ConfigUtils.clear(project_name)
         self._config = ConfigUtils.get_config(project_name)
 
-    def run(self):
+    def run(self, *, args):
+        logging.getLogger(__name__).info("arguments {}".format(args))
         logging.getLogger(__name__).info("program version {}".format(__version__))
         logging.getLogger(__name__).debug("configurations {}".format(self._config.as_dict()))
         return 0
@@ -46,7 +48,9 @@ class Runner(metaclass=Singleton):
 
 def main():
     try:
-        state = Runner().run()
+        parser = argparse.ArgumentParser(description='Python template project')
+        args = parser.parse_args()
+        state = Runner().run(args=args)
     except Exception as e:
         logging.getLogger(__name__).exception('An error occurred.', exc_info=e)
         return 1

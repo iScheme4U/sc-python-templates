@@ -41,7 +41,7 @@ class Runner(metaclass=Singleton):
 
     def run(self, *, args):
         logging.getLogger(__name__).info("arguments {}".format(args))
-        logging.getLogger(__name__).info("program version {}".format(__version__))
+        logging.getLogger(__name__).info("program {} version {}".format(PROJECT_NAME, __version__))
         logging.getLogger(__name__).debug("configurations {}".format(self._config.as_dict()))
         return 0
 

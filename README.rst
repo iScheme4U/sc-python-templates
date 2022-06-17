@@ -3,10 +3,10 @@
 .. image:: https://img.shields.io/pypi/pyversions/sc-python-templates
     :alt: PyPI - Python Version
 
-A simple Python project sample structure
+A simple Python project
 ========================================
 
-This project provides a sample structure for creating python project.
+This project provides a simple python project.
 
 
 Installation

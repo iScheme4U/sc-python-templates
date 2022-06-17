@@ -53,10 +53,10 @@ setup(
     author_email='exceedego@126.com',
     license='MIT',
     platforms='POSIX',
-    description='template python project',
+    description='python project',
     long_description=readme,
     keywords=(
-        'python template'
+        'python'
     ),
     entry_points={
         'console_scripts': [

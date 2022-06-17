@@ -48,7 +48,7 @@ class Runner(metaclass=Singleton):
 
 def main():
     try:
-        parser = argparse.ArgumentParser(description='Python template project')
+        parser = argparse.ArgumentParser(description='Python project')
         args = parser.parse_args()
         state = Runner().run(args=args)
     except Exception as e:

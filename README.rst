@@ -6,7 +6,7 @@
 A simple Python project
 ========================================
 
-This project provides a simple python project.
+This is a simple python project.
 
 
 Installation

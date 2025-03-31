@@ -65,6 +65,9 @@ setup(
     },
     classifiers=[
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
@@ -75,7 +78,7 @@ setup(
         'Topic :: Software Development',
         'Topic :: Utilities',
     ],
-    python_requires='>=3.9',
+    python_requires='>=3.6',
     install_requires=[
         'sc-utilities>=0.0.11',
         'sc-config>=0.0.14',

@@ -19,38 +19,3 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-import argparse
-import logging
-
-from sc_config import ConfigUtils
-from sc_utilities import Singleton, log_init
-
-from . import PROJECT_NAME, __version__
-
-
-class Runner(metaclass=Singleton):
-
-    def __init__(self):
-        project_name = PROJECT_NAME
-        ConfigUtils.clear(project_name)
-        self._config = ConfigUtils.get_config(project_name)
-
-    def run(self, *, args):
-        logging.getLogger(__name__).info("arguments {}".format(args))
-        logging.getLogger(__name__).info("program {} version {}".format(PROJECT_NAME, __version__))
-        logging.getLogger(__name__).debug("configurations {}".format(self._config.as_dict()))
-        return 0
-
-
-def main():
-    try:
-        log_init()
-        parser = argparse.ArgumentParser(description='Python project')
-        args = parser.parse_args()
-        state = Runner().run(args=args)
-    except Exception as e:
-        logging.getLogger(__name__).exception('An error occurred.', exc_info=e)
-        return 1
-    else:
-        return state

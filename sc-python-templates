@@ -27,10 +27,6 @@
 
 from sys import exit
 
-from sc_utilities import log_init
-
 from sc_templates.main import main
-
-log_init()
 
 exit(main())

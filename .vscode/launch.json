@@ -6,7 +6,7 @@
       "type": "debugpy",
       "request": "launch",
       "program": "${file}",
-      "cwd": "${workspaceFolder}/test_data",
+      "cwd": "${workspaceFolder}/tests/test_data",
       "env": {
         "LOG_LEVEL": "DEBUG",
       },

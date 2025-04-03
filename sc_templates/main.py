@@ -20,16 +20,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import argparse
 import logging
 
-from sc_utilities import Singleton
-from sc_utilities import log_init
-
-log_init()
-
 from sc_config import ConfigUtils
+from sc_utilities import Singleton
+
 from sc_templates import PROJECT_NAME, __version__
-import argparse
 
 
 class Runner(metaclass=Singleton):

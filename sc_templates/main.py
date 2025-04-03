@@ -26,7 +26,7 @@ import logging
 from sc_config import ConfigUtils
 from sc_utilities import Singleton
 
-from sc_templates import PROJECT_NAME, __version__
+from . import PROJECT_NAME, __version__
 
 
 class Runner(metaclass=Singleton):

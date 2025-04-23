@@ -22,23 +22,17 @@
 
 import unittest
 
-from sc_config.config_utils import ConfigUtils
-from sc_utilities import log_init
+from sc_utilities import Config, log_init
 
 
 class ConfigTestCase(unittest.TestCase):
 
     def test_create_config(self):
-        config = ConfigUtils.get_config(project_name="sc-config")
+        config = Config("test_data/production.yml")
         self.assertIsNotNone(config)
         environment = config.get("environment")
 
         self.assertEqual(environment, 'production')
-        config.set('environment', 'development')
-
-        self.assertEqual(config.get("environment"), 'development')
-
-        config.commit()
 
 
 if __name__ == '__main__':

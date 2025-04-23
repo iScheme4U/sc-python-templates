@@ -22,15 +22,10 @@ Configuration
 Configuration files reading in this order, the first is the top most priority:
 
 #. production.xml in current directory,
-#. production.xml in <project_name> directory under User directory,
-#. production.xml in <project_name> directory under /var/opt/sc/ directory,
-#. default.xml in <project_name> directory under /var/opt/sc/ directory.
 
 The default configuration file looks like this::
 
-    dev:
-      # whether this program is running is development mode
-      dev_mode: False
+    environment: production
 
 License
 -------

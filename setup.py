@@ -75,7 +75,7 @@ setup(
     ],
     python_requires='>=3.8',
     install_requires=[
-        'sc-utilities==0.0.12',
+        'sc-utilities==0.0.13',
     ],
     package_data={
         'sc_templates': ['tests/sample_config/*'],

@@ -75,10 +75,11 @@ setup(
     ],
     python_requires='>=3.8',
     install_requires=[
-        'sc-utilities==0.0.13',
+        'sc-utilities==0.0.15',
+        'PySide6==6.6.3.1',
     ],
     package_data={
-        'sc_templates': ['tests/sample_config/*'],
+        'sc_templates': ['sample_config/*'],
     },
     include_package_data=True,
 )

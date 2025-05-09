@@ -67,7 +67,7 @@ target/
 .idea/
 
 # other project specific ignore files
-test_data/
+tests/test_data/
 sc-sys.log.*
 *.csv
 *.xlsx

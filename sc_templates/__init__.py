@@ -21,5 +21,6 @@
 # SOFTWARE.
 
 __version__ = "0.0.1"
+__build_date__ = "2025-05-09 20:38:51"
 
 PROJECT_NAME = 'sc-python-templates'

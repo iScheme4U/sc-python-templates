@@ -19,36 +19,31 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
-import argparse
 import logging
 
-from sc_utilities import Config, Singleton, log_init
+from PySide6.QtCore import Qt
+from PySide6.QtWidgets import (QApplication, QMessageBox)
+from sc_utilities import log_init
 
-from . import PROJECT_NAME, __version__
-
-
-class Runner(metaclass=Singleton):
-
-    def __init__(self):
-        project_name = PROJECT_NAME
-        self._config = Config()
-
-    def run(self, *, args):
-        logging.getLogger(__name__).info("arguments {}".format(args))
-        logging.getLogger(__name__).info("program {} version {}".format(PROJECT_NAME, __version__))
-        logging.getLogger(__name__).debug("configurations {}".format(self._config))
-        return 0
+from sc_templates.qt.app import Application
 
 
 def main():
     try:
         log_init()
-        parser = argparse.ArgumentParser(description='Python project')
-        args = parser.parse_args()
-        state = Runner().run(args=args)
+        # 创建Qt应用
+        app = QApplication([])
+
+        # 设置高DPI支持
+        app.setAttribute(Qt.AA_EnableHighDpiScaling)
+
+        # 创建主窗口
+        window = Application()
+        window.show()
+
+        # 执行应用
+        return app.exec()
     except Exception as e:
         logging.getLogger(__name__).exception('An error occurred.', exc_info=e)
+        QMessageBox.critical(None, "错误", f"程序出错了！错误信息：{e}")
         return 1
-    else:
-        return state

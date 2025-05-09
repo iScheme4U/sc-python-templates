@@ -1,2 +1,2 @@
-recursive-include sc_templates/tests/sample_config *
+recursive-include sc_templates/sample_config *
 recursive-include requirements *.txt

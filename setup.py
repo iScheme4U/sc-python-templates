@@ -77,8 +77,5 @@ setup(
     install_requires=[
         'sc-utilities==0.0.16',
     ],
-    package_data={
-        'sc_templates': ['sample_config/*'],
-    },
     include_package_data=True,
 )

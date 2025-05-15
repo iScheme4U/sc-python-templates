@@ -1,2 +1,3 @@
-recursive-include sc_templates/sample_config *
+include CHANGES.rst
 recursive-include requirements *.txt
+recursive-include tests/test_data *.yml

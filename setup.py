@@ -75,7 +75,7 @@ setup(
     ],
     python_requires='>=3.8',
     install_requires=[
-        'sc-utilities==0.0.16',
+        'sc-utilities==0.0.17',
         'PySide6==6.6.3.1',
     ],
     include_package_data=True,

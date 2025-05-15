@@ -168,9 +168,6 @@ class Application(QMainWindow):
         self._log_worker._log_signal.connect(self._append_log)
         self._log_worker.start()
 
-    def _load_config(self):
-        self._config = Config()
-
     def _append_log(self, log):
         """追加日志到文本框"""
         self._output_area.moveCursor(QTextCursor.End)
@@ -221,8 +218,9 @@ class Application(QMainWindow):
             QMessageBox.critical(self, "错误", "配置文件不存在！")
             return
         logging.getLogger(__name__).info(f"当前工作目录已设置为: {path}")
+        analyzer = MainAnalyzer(Config(config_file))
         try:
-            self._load_config()
+            analyzer.read_config()
         except Exception as e:
             self._process_btn.setEnabled(True)
             QMessageBox.critical(self, "错误", f"配置文件加载失败，错误信息：{e}！")
@@ -234,7 +232,7 @@ class Application(QMainWindow):
         # 启动处理线程
         self._processing_thread = threading.Thread(
             target=self._run,
-            args=(),
+            args=(analyzer,),
             daemon=True,
             name="ProcessingThread"
         )
@@ -249,10 +247,9 @@ class Application(QMainWindow):
         self._log_worker.stop()
         super().closeEvent(event)
 
-    def _run(self):
+    def _run(self, analyzer: MainAnalyzer):
         self._process_btn.setEnabled(False)
 
-        analyzer = MainAnalyzer(self._config)
         result = analyzer.analysis()
         logging.getLogger(__name__).info(f"结束分析，结果为: {result} ")
         self._process_btn.setEnabled(True)

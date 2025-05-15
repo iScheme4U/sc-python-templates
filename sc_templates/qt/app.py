@@ -221,6 +221,12 @@ class Application(QMainWindow):
             QMessageBox.critical(self, "错误", "配置文件不存在！")
             return
         logging.getLogger(__name__).info(f"当前工作目录已设置为: {path}")
+        try:
+            self._load_config()
+        except Exception as e:
+            self._process_btn.setEnabled(True)
+            QMessageBox.critical(self, "错误", f"配置文件加载失败，错误信息：{e}！")
+            return
 
         # 禁用处理按钮
         self._process_btn.setEnabled(False)
@@ -245,9 +251,9 @@ class Application(QMainWindow):
 
     def _run(self):
         self._process_btn.setEnabled(False)
-        self._load_config()
 
         analyzer = MainAnalyzer(self._config)
         result = analyzer.analysis()
+        logging.getLogger(__name__).info(f"结束分析，结果为: {result} ")
         self._process_btn.setEnabled(True)
         return result

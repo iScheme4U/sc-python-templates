@@ -222,12 +222,13 @@ class Application(QMainWindow):
         try:
             analyzer.read_config()
         except Exception as e:
-            self._process_btn.setEnabled(True)
             QMessageBox.critical(self, "错误", f"配置文件加载失败，错误信息：{e}！")
             return
-
-        # 禁用处理按钮
-        self._process_btn.setEnabled(False)
+        try:
+            analyzer.validate()
+        except Exception as e:
+            QMessageBox.critical(self, "错误", f"校验失败，错误信息：{e}！")
+            return
 
         # 启动处理线程
         self._processing_thread = threading.Thread(

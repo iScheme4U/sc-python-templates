@@ -34,6 +34,9 @@ class MainAnalyzer:
     def read_config(self):
         pass
 
+    def validate(self):
+        pass
+
     def analysis(self):
         logging.getLogger(__name__).info(f"program {PROJECT_NAME} version {__version__} build date {__build_date__}")
         logging.getLogger(__name__).debug("configurations {}".format(self._config))

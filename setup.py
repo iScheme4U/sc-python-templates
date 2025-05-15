@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # The MIT License (MIT)
 #
-# Copyright (c) 2025 Scott Lau
+# Copyright (c) 2025 Scott
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -47,10 +47,8 @@ with open('README.rst', encoding="utf-8") as fd:
 setup(
     name='sc-python-templates',
     version=get_version("sc_templates/__init__.py"),
-    url='https://github.com/Scott-Lau/sc-python-templates',
     packages=find_packages(exclude=['tests', 'tests.*']),
-    author='Scott Lau',
-    author_email='exceedego@126.com',
+    author='Scott',
     license='MIT',
     platforms='POSIX',
     description='python project',

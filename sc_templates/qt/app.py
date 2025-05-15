@@ -1,6 +1,6 @@
 #  The MIT License (MIT)
 #
-#  Copyright (c) 2025 Scott Lau
+#  Copyright (c) 2025 Scott
 #
 #  Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to deal
@@ -81,7 +81,7 @@ class Application(QMainWindow):
             f"{PROJECT_NAME}\n\n"
             f"版本: {__version__}\n"
             f"构建时间: {__build_date__}\n"
-            f"Copyright © 2025 Scott Lau"
+            f"Copyright © 2025 Scott"
         )
 
         QMessageBox.information(

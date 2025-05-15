@@ -1,0 +1,20 @@
+#!/bin/bash
+
+current_date=$(date "+%Y-%m-%d %H:%M:%S")
+
+echo "Updating __build_date__ in __init__.py files..."
+
+find . -maxdepth 2 -mindepth 1 -type f -name "__init__.py" | while read -r file; do
+    if [[ "$file" != *"/tests/"* ]] && [[ "$file" != *"/tests/__init__.py" ]]; then
+        # macOS (BSD sed) 需要 -i ''，Linux (GNU sed) 可以不带
+        if sed --version 2>/dev/null | grep -q GNU; then
+            sed -i "s/__build_date__ = \".*\"/__build_date__ = \"$current_date\"/" "$file"
+        else
+            sed -i '' "s/__build_date__ = \".*\"/__build_date__ = \"$current_date\"/" "$file"
+        fi
+        git add "$file"
+        echo "Updated $file with __build_date__ = \"$current_date\""
+    fi
+done
+
+exit 0

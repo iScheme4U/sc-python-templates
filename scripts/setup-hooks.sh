@@ -1,6 +1,8 @@
+#!/bin/bash
+#
 # The MIT License (MIT)
 #
-# Copyright (c) 2025 Scott
+# Copyright (c) 2025. Scott Lau
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -19,8 +21,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+#
 
-__version__ = "0.0.1"
-__build_date__ = "2025-05-15 14:22:41"
-
-PROJECT_NAME = 'sc-python-templates'
+chmod +x git-hooks/*
+# 设置 Git 使用仓库内的钩子目录
+git config core.hooksPath git-hooks/

@@ -16,6 +16,13 @@ It is possible to install the tool with `pip`::
 
     pip install sc-python-templates
 
+Development
+-------------
+
+Run following command to setup git hooks::
+
+    ./scripts/setup-hooks.sh
+
 Configuration
 -------------
 

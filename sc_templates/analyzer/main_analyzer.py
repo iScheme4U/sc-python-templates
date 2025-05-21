@@ -21,7 +21,7 @@
 #  SOFTWARE.
 import logging
 
-from sc_utilities import Config
+from sc_utilities import Config, log_init
 
 from sc_templates import PROJECT_NAME, __version__, __build_date__
 
@@ -42,3 +42,10 @@ class MainAnalyzer:
         logging.getLogger(__name__).debug("configurations {}".format(self._config))
 
         return 0
+
+
+if __name__ == '__main__':
+    log_init()
+    analyzer = MainAnalyzer(Config())
+    result = analyzer.analysis()
+    logging.getLogger(__name__).info(f"结束分析，结果为: {result} ")

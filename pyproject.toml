@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=65.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sc-python-templates"
+dynamic = ["version"]  # 声明 version 为动态字段
+description = "python project"
+readme = "README.rst"
+authors = [
+    { name = "Scott Lau" }
+]
+license = { text = "MIT" }
+keywords = ["python"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    'Topic :: Software Development',
+    'Topic :: Utilities',
+]
+dependencies = [
+    "sc-utilities>=0.0.17",
+]
+
+[project.entry-points.console_scripts]
+sc-python-templates = "sc_templates.main:main"
+
+[tool.setuptools]
+packages = ["sc_templates"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+# 指定从 sc_templates/__init__.py 中获取 __version__
+version = { attr = "sc_templates.__version__" }

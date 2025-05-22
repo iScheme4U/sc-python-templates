@@ -31,7 +31,7 @@ dependencies = [
 sc-python-templates = "sc_templates.main:main"
 
 [tool.setuptools]
-packages = ["sc_templates"]
+packages = { find = { exclude = ["tests", "tests.*"] } }
 include-package-data = true
 
 [tool.setuptools.dynamic]
